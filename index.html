@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Wat zegt Ivo?</title>
+    <style>
+      #background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -3;
+        background: url('bigivoiswatchingyou.jpg');
+        opacity: 0.4;
+      }
+      li {
+        margin: 1em;
+      }
+      li a {
+        display: block;
+        min-width: 10em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wat zegt Ivo?</h1>
+    <ul id="quotelist">
+      <li><a href="backupsysteem.mp3">Backupsysteem!</a></li>
+      <li><a href="cyber.mp3">Het fenomeen van de cyber.</a></li>
+      <li><a href="gat.mp3">Ik heb een gat in de lucht gesprongen</a></li>
+      <li><a href="herken.mp3">Ik herken me hierin op geen enkele manier</a></li>
+      <li><a href="informatie.mp3">Kijk naar de informatie die je zelf verstuurt</a></li>
+      <li><a href="juisteman.mp3">Absoluut de juiste man</a></li>
+      <li><a href="moetenisduidelijk.mp3">Moet en is duidelijk</a></li>
+      <li><a href="niethelemaalgoed.mp3">Niet helemaal goed</a></li>
+      <li><a href="serieus.mp3">Nee, maar, serieus</a></li>
+      <li><a href="totaalmeeeens.mp3">Ik ben het totaal met iedereen eens</a></li>
+      <li><a href="totaleonzin.mp3">Totale onzin</a></li>
+      <li><a href="wachtwoorden.mp3">Ik ben heel goed in die wachtwoorden</a></li>
+    </ul>
+    <div id="background"></div>
+    <script type="text/javascript">
+      for (listitem of quotelist.children) {
+        let mp3uri = listitem.firstElementChild.href;
+        let audioElement = document.createElement("audio");
+        audioElement.controls = true;
+        let sourceElement = document.createElement("source");
+        sourceElement.src = mp3uri;
+        audioElement.appendChild(sourceElement);
+        listitem.appendChild(audioElement);
+      }
+    </script>
+  </body>
+</html>
